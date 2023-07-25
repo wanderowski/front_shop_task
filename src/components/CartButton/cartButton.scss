@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+
+.cart {
+  background-color: transparent;
+  border: none;
+  min-width: 50px;
+
+  &__top {
+    @include flex-row-center;
+    justify-content: space-between;
+  }
+
+  &__count {
+    font-size: 28px;
+    color: #6e8492;
+    font-weight: 900;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: #6e8492;
+    font-weight: 900;
+  }
+}
