@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "normalize.css";
+import "reset-css";
 import Home from "./pages/Home";
 import LoadingBar from "./components/LoadingBar/LoadingBar";
 import Card from "./pages/Card";

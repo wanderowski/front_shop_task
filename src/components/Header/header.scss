@@ -2,7 +2,7 @@
 
 .header {
   @include flex-column-center-full;
-  padding: 10px;
+  padding: 10px 0;
 
   &__wrapper {
     align-items: stretch;
@@ -53,15 +53,9 @@
 
   &__actionWrapper {
     @include flex-row-center;
+    @include background-stroke;
     padding: 10px 30px 10px 26px;
     border: 1px dashed #bebebe;
     border-radius: 10px;
-    background: repeating-linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 2px,
-      transparent 5px
-    );
   }
 }

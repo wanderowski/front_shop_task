@@ -1,9 +1,9 @@
 import Logo from "@/components/Logo/Logo";
-import Container from "../Container/Container";
 import "./header.scss";
 import SearchField from "@/components/SearchField";
 import CartButton from "@/components/CartButton";
 import Navigation from "@/components/Navigation/Navigation";
+import Container from "@/components/Container";
 
 const Header = () => {
   interface MenuItem {
