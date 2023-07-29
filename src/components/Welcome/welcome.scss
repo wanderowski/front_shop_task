@@ -2,9 +2,10 @@
 
 .welcome {
   @include flex-column-center-full;
-  padding: 40px;
+  padding: 40px 0;
 
   &__wrapper {
+    width: 100%;
   }
 
   &__title {
@@ -22,5 +23,16 @@
     font-weight: 300;
     text-align: left;
     padding: 0 0 40px 0;
+  }
+
+  &__banners {
+    @include flex-row-center;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  &__banner {
+    height: 120px;
   }
 }

@@ -24,7 +24,7 @@ const GalleryCarousel: React.FC<IGalleryCarouselProps> = ({ images }) => {
         onClick={goPrev}
         disabled={activeIndex === 0}
       >
-        &lt;
+        <img src="/gallery-images/arrow-left.png"></img>
       </button>
 
       <div className="gallery-carousel__window">
@@ -36,6 +36,15 @@ const GalleryCarousel: React.FC<IGalleryCarouselProps> = ({ images }) => {
         >
           {images.map((slide, index) => (
             <li className="gallery-carousel__slide" key={index}>
+              <div className="gallery-carousel__overlay">
+                <div className="gallery-carousel__overlay-content">
+                  <h3>{slide.title}</h3>
+                  <p>${slide.price}</p>
+                  <button className="gallery-carousel__view-button">
+                    View
+                  </button>
+                </div>
+              </div>
               <img
                 className="gallery-carousel__image"
                 src={slide.base64}
@@ -51,7 +60,7 @@ const GalleryCarousel: React.FC<IGalleryCarouselProps> = ({ images }) => {
         onClick={goNext}
         disabled={activeIndex === images.length - 5}
       >
-        &gt;
+        <img src="/gallery-images/arrow-right.png"></img>
       </button>
     </div>
   );

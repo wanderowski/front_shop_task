@@ -18,10 +18,19 @@ export interface ImageInterface {
   base64: string;
 }
 
+export interface ICarouselItem extends ImageInterface {
+  price: number;
+}
+
 export interface IContainerProps {
   children: React.ReactNode;
 }
 
 export interface IGalleryCarouselProps {
-  images: ImageInterface[];
+  images: ICarouselItem[];
+}
+
+export interface ILoadingBarProps {
+  percentage?: number;
+  customStyles?: React.CSSProperties;
 }

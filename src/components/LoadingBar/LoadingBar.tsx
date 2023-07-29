@@ -1,8 +1,13 @@
+import { ILoadingBarProps } from "@/types";
 import "./loadingBar.scss";
 
-const LoadingBar = ({ percentage = 100 }) => {
+const LoadingBar: React.FC<ILoadingBarProps> = ({
+  percentage = 100,
+  customStyles = {},
+}) => {
   const style = {
     width: `${percentage}%`,
+    ...customStyles,
   };
   return <div className="loading-bar" style={style} />;
 };

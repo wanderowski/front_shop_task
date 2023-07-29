@@ -1,16 +1,27 @@
 import Container from "@/components/Container";
 import "./welcome.scss";
 import GalleryCarousel from "@/components/GalleryCarousel/GalleryCarousel";
-import { ImageInterface } from "@/types";
+import { ICarouselItem } from "@/types";
 import { useEffect, useState } from "react";
 import axios from "@/services/axios";
 
+const banners = [
+  {
+    src: "/banner1.png",
+    title: "Get cashback 25$!",
+  },
+  {
+    src: "/banner2.png",
+    title: "Shop now!",
+  },
+];
+
 const Welcome = () => {
-  const [images, setImages] = useState<ImageInterface[]>([]);
+  const [images, setImages] = useState<ICarouselItem[]>([]);
 
   const handleGetImages = async () => {
     try {
-      const { data }: { data: ImageInterface[] } = await axios.get(
+      const { data }: { data: ICarouselItem[] } = await axios.get(
         "/gallery-images"
       );
       setImages(data);
@@ -42,6 +53,13 @@ const Welcome = () => {
             tincidunt metus.
           </p>
           <GalleryCarousel images={[...images, ...images]} />
+          <div className="welcome__banners">
+            {banners.map((banner) => (
+              <div className="welcome__banner">
+                <img src={banner.src} alt={banner.title} />
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </div>
