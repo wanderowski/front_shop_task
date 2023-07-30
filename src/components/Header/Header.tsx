@@ -9,6 +9,7 @@ const Header = () => {
   interface MenuItem {
     title: string;
     src: string;
+    onClick?: () => void;
   }
 
   const menuItems: MenuItem[] = [
@@ -25,8 +26,12 @@ const Header = () => {
       src: "checkout.png",
     },
     {
-      title: "Log In",
+      title: "Log Out",
       src: "login.png",
+      onClick: () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+      },
     },
   ];
   return (
@@ -39,7 +44,11 @@ const Header = () => {
           <div className="header__info">
             <div className="header__topnav">
               {menuItems.map((item) => (
-                <Logo src={item.src} title={item.title} />
+                <Logo
+                  src={item.src}
+                  title={item.title}
+                  onClick={item.onClick}
+                />
               ))}
             </div>
             <div className="header__details">

@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "reset-css";
 import Home from "./pages/Home";
 import LoadingBar from "./components/LoadingBar/LoadingBar";
-import Card from "./pages/Card";
+import LoginPage from "@/pages/Login/Login";
+import AuthWrapper from "@/components/AuthWrapper/AuthWrapper";
 
 function App() {
   return (
@@ -10,8 +11,15 @@ function App() {
       <LoadingBar />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<Card />} />
+          <Route
+            path="/"
+            element={
+              <AuthWrapper>
+                <Home />
+              </AuthWrapper>
+            }
+          />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Router>
     </>

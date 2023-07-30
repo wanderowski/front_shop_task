@@ -1,6 +1,7 @@
 export interface ILogoProps {
   title: string;
   src: string;
+  onClick?: () => void;
 }
 
 export interface ICartButtonProps {
