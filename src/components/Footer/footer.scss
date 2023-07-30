@@ -1,0 +1,73 @@
+@import "../../styles/mixins.scss";
+
+.upper-footer {
+  width: 100%;
+  padding: 16px 0;
+  @include flex-column-center-full;
+
+  &__wrapper {
+    @include flex-row-center;
+    gap: 28px;
+  }
+
+  &__link {
+    color: #6d6d6d;
+    opacity: 0.8;
+    font-size: 14px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      height: 8px;
+      width: 1px;
+      background-color: #6d6d6d;
+      transform: translateY(-50%);
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+.lower-footer {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #6e8492;
+  @include flex-column-center-full;
+
+  &__wrapper {
+    @include flex-row-center;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  &__controls {
+    @include flex-row-center;
+    gap: 8px;
+  }
+
+  &__select {
+    font-size: 10px;
+    padding: 5px 30px 5px 8px;
+    color: #6d6d6d;
+
+    background-image: url("/public/arrow_down.png");
+    background-position: calc(100% - 2px) center;
+    background-repeat: no-repeat;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid #6e8492;
+    outline: none;
+  }
+}

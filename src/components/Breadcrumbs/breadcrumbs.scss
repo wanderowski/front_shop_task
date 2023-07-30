@@ -1,0 +1,7 @@
+@import "../../styles/mixins.scss";
+
+.breadcrumbs {
+  @include flex-column-center-full;
+  padding: 0;
+  margin: 0;
+}

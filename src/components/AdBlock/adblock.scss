@@ -1,0 +1,9 @@
+@import "../../styles/mixins.scss";
+
+.adblock {
+  @include flex-column-center-full;
+  @include background-stroke;
+  padding: 20px 0;
+  background-color: #e1e7eb;
+  width: 100%;
+}
